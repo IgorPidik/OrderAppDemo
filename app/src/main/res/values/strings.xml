@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="checkout">FINISH ORDER</string>
+    <string name="pound">£</string>
+</resources>
