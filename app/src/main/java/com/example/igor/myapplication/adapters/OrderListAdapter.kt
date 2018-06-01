@@ -16,8 +16,8 @@ class OrderListAdapter(private val orderManager: OrderManager, context: Context?
     private var items = mutableListOf<OrderItem>()
 
     override fun notifyDataSetChanged() {
-        super.notifyDataSetChanged()
         items = orderManager.getItems()
+        super.notifyDataSetChanged()
     }
 
     override fun getCount(): Int {
