@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     private val orderManager = OrderManager.instance
-
+    private val orderListFragment = OrderListFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,9 +27,13 @@ class MainActivity : AppCompatActivity() {
         setUpTableLayoutMode()
         orderManager.setActivity(this)
         val orderListAdapter = OrderListAdapter(orderManager, this, R.layout.order_list_item)
+
         orderManager.addNotifiableAdapter(orderListAdapter)
-        orderList.adapter = orderListAdapter
-        orderList.emptyView = emptyOrder
+        orderListFragment.setAdapter(orderListAdapter)
+
+
+        setUpOrderListFragment()
+
 
         finishOrder.setOnClickListener {
             if(orderManager.getItems().size == 0)
@@ -51,6 +55,12 @@ class MainActivity : AppCompatActivity() {
                 tabLayout.tabMode = TabLayout.MODE_SCROLLABLE
             }
         }
+    }
+
+    private fun setUpOrderListFragment() {
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.add(R.id.orderListFrame, orderListFragment)
+        transaction.commit()
     }
 
     override fun onResume() {
