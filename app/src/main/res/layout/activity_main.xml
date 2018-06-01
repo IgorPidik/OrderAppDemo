@@ -94,24 +94,39 @@
                 android:layout_weight="1" />
 
             <Button
+                android:id="@+id/finishOrder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end|center_vertical"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:paddingRight="10dp"
-                android:paddingLeft="10dp"
                 android:background="@drawable/round_button_white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
                 android:text="@string/checkout"
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold" />
         </LinearLayout>
 
-        <ListView
-            android:id="@+id/orderList"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/orderList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <TextView
+                android:id="@+id/emptyOrder"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="24sp"
+                android:textColor="@android:color/darker_gray"
+                android:text="@string/empty_order_string"/>
+        </LinearLayout>
 
     </LinearLayout>
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>

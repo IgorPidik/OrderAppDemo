@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.igor.myapplication.R
 import com.example.igor.myapplication.adapters.ItemFragmentPageAdapter
 import com.example.igor.myapplication.adapters.OrderListAdapter
@@ -28,8 +29,14 @@ class MainActivity : AppCompatActivity() {
         val orderListAdapter = OrderListAdapter(orderManager, this, R.layout.order_list_item)
         orderManager.addNotifiableAdapter(orderListAdapter)
         orderList.adapter = orderListAdapter
+        orderList.emptyView = emptyOrder
 
-
+        finishOrder.setOnClickListener {
+            if(orderManager.getItems().size == 0)
+                Toast.makeText(this, "Order something first", Toast.LENGTH_LONG).show()
+            else
+                finishOrder()
+        }
 
     }
 
@@ -53,6 +60,10 @@ class MainActivity : AppCompatActivity() {
 
     fun setNewCost(newCost: Double) {
         orderPrice.text = newCost.toString()
+    }
+
+    private fun finishOrder() {
+        Toast.makeText(this, "finishing order", Toast.LENGTH_LONG).show()
     }
 
     override fun onBackPressed() {
