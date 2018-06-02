@@ -13,6 +13,7 @@ class OrderListFragment: Fragment() {
 
     companion object {
         const val VIEW_VISIBILITY_KEY = "VIEW_VISIBILITY"
+        val TAG = OrderListFragment::class.java.simpleName
     }
 
     private var adapter: BaseAdapter? = null
@@ -27,21 +28,8 @@ class OrderListFragment: Fragment() {
         adapter = newAdapter
     }
 
-    override fun onViewStateRestored(savedInstanceState: Bundle?) {
-        savedInstanceState?.let {
-            if(view != null) {
-                view!!.emptyOrder.visibility = savedInstanceState.getInt(VIEW_VISIBILITY_KEY, 0)
-            }
-        }
-        super.onViewStateRestored(savedInstanceState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
     }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        view?.let {
-            outState.putInt(VIEW_VISIBILITY_KEY, it.emptyOrder.visibility)
-        }
-        super.onSaveInstanceState(outState)
-    }
-
-
 }

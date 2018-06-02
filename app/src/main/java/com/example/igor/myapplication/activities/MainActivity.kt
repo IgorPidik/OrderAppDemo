@@ -4,6 +4,7 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.util.Log
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.igor.myapplication.R
@@ -60,9 +61,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpOrderListFragment() {
-        val transaction = supportFragmentManager.beginTransaction()
-        transaction.add(R.id.orderListFrame, orderListFragment)
-        transaction.commit()
+        if(supportFragmentManager.findFragmentByTag(OrderListFragment.TAG) == null) {
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.add(R.id.orderListFrame, orderListFragment, OrderListFragment.TAG)
+            transaction.commit()
+        }
     }
 
     override fun onResume() {
