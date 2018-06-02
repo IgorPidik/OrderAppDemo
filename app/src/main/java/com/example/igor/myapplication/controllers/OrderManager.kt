@@ -15,6 +15,12 @@ class OrderManager private constructor() {
     private var activity: MainActivity? = null
     private var price: Double = 0.0
 
+    companion object {
+        val instance: OrderManager by lazy {
+            OrderManager()
+        }
+    }
+
     fun addItem(foodItem: FoodItem) {
         val orderItem = items.find { it.foodItem == foodItem }
         if (orderItem == null) {
@@ -30,7 +36,7 @@ class OrderManager private constructor() {
 
     fun removeItem(foodItem: FoodItem) {
         val orderItem = items.find { it.foodItem == foodItem }
-        if(orderItem == null) return
+        if (orderItem == null) return
         else {
             price -= orderItem.foodItem.price
             orderItem.count = orderItem.count - 1
@@ -66,11 +72,11 @@ class OrderManager private constructor() {
     fun getItems() = items
 
     fun notifyChanges() {
-        for(adapter in adapters) {
+        for (adapter in adapters) {
             adapter.notifyDataSetChanged()
         }
 
-        for(adapter in recyclerViewAdapters) {
+        for (adapter in recyclerViewAdapters) {
             adapter.notifyDataSetChanged()
         }
 
@@ -95,11 +101,4 @@ class OrderManager private constructor() {
         notifyChanges()
 
     }
-
-    companion object {
-        val instance: OrderManager by lazy {
-            OrderManager()
-        }
-    }
-
 }
