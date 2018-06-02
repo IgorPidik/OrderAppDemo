@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
 import android.support.v4.app.FragmentPagerAdapter
-import com.example.igor.myapplication.views.PageFragment
+import com.example.igor.myapplication.fragments.PageFragment
 
 class ItemFragmentPageAdapter(private val items: List<String>, fm: FragmentManager?) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment? {

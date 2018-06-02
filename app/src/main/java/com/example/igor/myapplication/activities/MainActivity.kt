@@ -1,5 +1,6 @@
-package com.example.igor.myapplication.views
+package com.example.igor.myapplication.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
@@ -9,6 +10,7 @@ import com.example.igor.myapplication.R
 import com.example.igor.myapplication.adapters.ItemFragmentPageAdapter
 import com.example.igor.myapplication.adapters.OrderListAdapter
 import com.example.igor.myapplication.controllers.OrderManager
+import com.example.igor.myapplication.fragments.OrderListFragment
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -73,7 +75,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun finishOrder() {
-        Toast.makeText(this, "finishing order", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, FinishOrderActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onBackPressed() {

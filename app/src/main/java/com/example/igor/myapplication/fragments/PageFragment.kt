@@ -1,4 +1,4 @@
-package com.example.igor.myapplication.views
+package com.example.igor.myapplication.fragments
 
 
 import android.os.Bundle

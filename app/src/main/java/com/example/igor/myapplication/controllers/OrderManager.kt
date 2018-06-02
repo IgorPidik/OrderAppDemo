@@ -1,15 +1,12 @@
 package com.example.igor.myapplication.controllers
 
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.widget.BaseAdapter
-import android.widget.ListAdapter
 import com.example.igor.myapplication.adapters.ItemViewAdapter
-import com.example.igor.myapplication.adapters.OrderListAdapter
 import com.example.igor.myapplication.models.FoodItem
 import com.example.igor.myapplication.models.OrderItem
 import com.example.igor.myapplication.models.sum
-import com.example.igor.myapplication.views.MainActivity
+import com.example.igor.myapplication.activities.MainActivity
 
 class OrderManager private constructor() {
     private var items = mutableListOf<OrderItem>()
