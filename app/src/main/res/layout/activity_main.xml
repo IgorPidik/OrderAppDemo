@@ -112,8 +112,8 @@
             android:id="@+id/orderListFrame"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1">
-        </FrameLayout>
+            android:layout_weight="1" />
+
 
     </LinearLayout>
 </com.sothree.slidinguppanel.SlidingUpPanelLayout>

@@ -68,7 +68,7 @@ class OrderManager private constructor() {
     fun getPrice() = price
     fun getItems() = items
 
-    private fun notifyChanges() {
+    fun notifyChanges() {
         for(adapter in adapters) {
             adapter.notifyDataSetChanged()
         }

@@ -65,7 +65,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        setNewCost(orderManager.getPrice())
+        orderManager.notifyChanges()
     }
 
     fun setNewCost(newCost: Double) {
