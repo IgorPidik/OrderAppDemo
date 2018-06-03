@@ -13,4 +13,8 @@ class AuthManager {
     fun getTestCustomer(): Customer {
         return Customer("John", "Doe", "1234567894654")
     }
+
+    fun getCustomer(): Customer {
+        return getTestCustomer()
+    }
 }

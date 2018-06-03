@@ -2,20 +2,23 @@ package com.example.igor.myapplication.controllers
 
 import android.util.Log
 import android.widget.BaseAdapter
+import com.example.igor.myapplication.activities.CostActivity
 import com.example.igor.myapplication.adapters.ItemViewAdapter
 import com.example.igor.myapplication.models.FoodItem
 import com.example.igor.myapplication.models.OrderItem
 import com.example.igor.myapplication.models.sum
 import com.example.igor.myapplication.activities.MainActivity
 import com.example.igor.myapplication.models.Address
+import com.example.igor.myapplication.utils.OrderType
 
 class OrderManager private constructor() {
     private var items = mutableListOf<OrderItem>()
     private val adapters = mutableListOf<BaseAdapter>()
     private val recyclerViewAdapters = mutableListOf<ItemViewAdapter>()
-    private var activity: MainActivity? = null
+    private var activity: CostActivity? = null
     private var price: Double = 0.0
-    private var address: Address? = null
+    var address: Address? = Address("UK", "London", "TEst street", 45, "b")
+    var orderType = OrderType.DELIVERY
 
     companion object {
         val instance: OrderManager by lazy {
@@ -51,6 +54,7 @@ class OrderManager private constructor() {
 
     fun addNotifiableAdapter(adapter: BaseAdapter) {
         adapters.add(adapter)
+        notifyChanges()
     }
 
     fun addNotifiableAdapter(adapter: ItemViewAdapter) {
@@ -85,8 +89,9 @@ class OrderManager private constructor() {
         activity?.setNewCost(price)
     }
 
-    fun setActivity(mainActivity: MainActivity) {
+    fun setActivity(mainActivity: CostActivity) {
         activity = mainActivity
+        notifyChanges()
     }
 
     fun orderCount(foodItem: FoodItem): Int {

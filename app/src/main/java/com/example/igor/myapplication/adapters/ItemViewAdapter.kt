@@ -22,17 +22,17 @@ class ItemViewAdapter(private val items: List<FoodItem>, private val orderManage
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val (foodName, foodDescription, price) = items[position]
-        holder.view.itemName.text = foodName
-        holder.view.itemDescription.text = foodDescription
-        holder.view.itemPrice.text = price.toString()
-        setOrderCount(holder.view.orderCount, items[position])
-        holder.view.addItem.setOnClickListener {
+        holder.view.item_name.text = foodName
+        holder.view.item_description.text = foodDescription
+        holder.view.item_price.text = price.toString()
+        setOrderCount(holder.view.order_count, items[position])
+        holder.view.add_item.setOnClickListener {
             orderManager.addItem(items[position])
-            setOrderCount(holder.view.orderCount, items[position])
+            setOrderCount(holder.view.order_count, items[position])
         }
-        holder.view.removeItem.setOnClickListener {
+        holder.view.remove_item.setOnClickListener {
             orderManager.removeItem(items[position])
-            setOrderCount(holder.view.orderCount, items[position])
+            setOrderCount(holder.view.order_count, items[position])
         }
     }
 

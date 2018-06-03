@@ -19,8 +19,8 @@ class OrderListFragment: Fragment() {
     private var adapter: BaseAdapter? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.order_list_fragment, container, false)
-        adapter?.let { view.orderList.adapter = it }
-        view.orderList.emptyView = view.emptyOrder
+        adapter?.let { view.order_list.adapter = it }
+        view.order_list.emptyView = view.empty_order
         return view
     }
 

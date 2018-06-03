@@ -11,4 +11,15 @@
     <string name="please_login">Please login</string>
     <string name="welcome">Welcome</string>
     <string name="app_title">PizzaDemo</string>
+    <string name="customer_information_heading">Customer information:</string>
+    <string name="customer_name">Name:</string>
+    <string name="customer_surname">Surname:</string>
+    <string name="order_information_heading">Order information:</string>
+    <string name="order_type">Order type:</string>
+    <string name="customer_phone_number">Phone number:</string>
+    <string name="delivery_adress">Delivery address:</string>
+    <string name="submit_order_text">Submit Order</string>
+    <string name="order_cost">Order Cost:</string>
+    <string name="order_list_heading">Your Order:</string>
+    <string name="remove_button_text">Remove</string>
 </resources>

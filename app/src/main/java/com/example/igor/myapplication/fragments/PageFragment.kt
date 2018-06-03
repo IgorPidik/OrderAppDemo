@@ -29,17 +29,17 @@ class PageFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val orderManager = OrderManager.instance
         val view = inflater.inflate(R.layout.fragment_page, container, false)
-        view.pageHeading.text = pageTitle
+        view.page_heading.text = pageTitle
 
         val items = mutableListOf<FoodItem>()
         for(i in 1 until 20)
             items.add(FoodItem("$pageTitle $i", "Description $i", i.toDouble()))
 
         Log.d("test", "test")
-        view.itemsView.layoutManager = LinearLayoutManager(activity)
+        view.items_view.layoutManager = LinearLayoutManager(activity)
         val itemAdapter = ItemViewAdapter(items, orderManager)
         orderManager.addNotifiableAdapter(itemAdapter)
-        view.itemsView.adapter = itemAdapter
+        view.items_view.adapter = itemAdapter
 
         return view
     }

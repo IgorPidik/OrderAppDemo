@@ -12,7 +12,7 @@ class PreOrderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pre_order)
 
-        logIn.setOnClickListener {
+        log_in.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
