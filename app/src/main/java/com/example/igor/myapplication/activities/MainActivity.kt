@@ -87,6 +87,7 @@ class MainActivity : AppCompatActivity() {
                 ||slidingLayout.panelState == SlidingUpPanelLayout.PanelState.ANCHORED) {
             slidingLayout.panelState = SlidingUpPanelLayout.PanelState.COLLAPSED
         } else {
+            orderManager.cancelOrder()
             super.onBackPressed()
         }
     }

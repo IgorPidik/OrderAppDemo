@@ -11,8 +11,6 @@ class AuthManager {
     }
 
     fun getTestCustomer(): Customer {
-        val address = Address("UK", "London", "Test Street", 46, null)
-
-        return Customer("John", "Doe", address, "1234567894654")
+        return Customer("John", "Doe", "1234567894654")
     }
 }

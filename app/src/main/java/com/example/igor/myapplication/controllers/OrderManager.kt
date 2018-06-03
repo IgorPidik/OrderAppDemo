@@ -7,6 +7,7 @@ import com.example.igor.myapplication.models.FoodItem
 import com.example.igor.myapplication.models.OrderItem
 import com.example.igor.myapplication.models.sum
 import com.example.igor.myapplication.activities.MainActivity
+import com.example.igor.myapplication.models.Address
 
 class OrderManager private constructor() {
     private var items = mutableListOf<OrderItem>()
@@ -14,6 +15,7 @@ class OrderManager private constructor() {
     private val recyclerViewAdapters = mutableListOf<ItemViewAdapter>()
     private var activity: MainActivity? = null
     private var price: Double = 0.0
+    private var address: Address? = null
 
     companion object {
         val instance: OrderManager by lazy {

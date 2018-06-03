@@ -15,7 +15,7 @@ class FinishOrderActivity : AppCompatActivity() {
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
-            it.title = "Order Summary:"
+            it.title = "Order Summary"
         }
     }
 
