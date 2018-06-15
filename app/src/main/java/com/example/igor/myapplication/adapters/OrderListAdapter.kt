@@ -13,7 +13,7 @@ class OrderListAdapter(private val orderManager: OrderManager, context: Context?
     private var items = mutableListOf<OrderItem>()
 
     override fun notifyDataSetChanged() {
-        items = orderManager.getItems()
+        items = orderManager.items
         super.notifyDataSetChanged()
     }
 

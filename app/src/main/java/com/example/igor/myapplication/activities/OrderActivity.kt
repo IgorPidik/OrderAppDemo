@@ -14,7 +14,7 @@ import com.example.igor.myapplication.fragments.OrderListFragment
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), CostActivity {
+class OrderActivity : AppCompatActivity(), CanSetCostInterface {
     private val orderManager = OrderManager.instance
     private val orderListFragment = OrderListFragment()
 
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), CostActivity {
 
 
         finish_order.setOnClickListener {
-            if(orderManager.getItems().size == 0)
+            if(orderManager.items.size == 0)
                 Toast.makeText(this, "Order something first", Toast.LENGTH_LONG).show()
             else
                 finishOrder()

@@ -1,5 +1,5 @@
 package com.example.igor.myapplication.activities
 
-interface CostActivity {
+interface CanSetCostInterface {
     fun setNewCost(newCost: Double)
 }

@@ -12,12 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.OrderActivity"
             android:theme="@style/AppTheme">
         </activity>
         <activity
             android:name=".activities.FinishOrderActivity"
-            android:theme="@style/FinishOrderActivityStyle"></activity>
+            android:theme="@style/FinishOrderActivityStyle" />
         <activity android:name=".activities.PreOrderActivity"
             android:theme="@style/PreOrderActivityStyle"
             android:screenOrientation="portrait">

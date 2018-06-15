@@ -13,7 +13,7 @@ import com.example.igor.myapplication.utils.OrderType
 import kotlinx.android.synthetic.main.activity_finish_order.*
 
 
-class FinishOrderActivity : AppCompatActivity(), CostActivity {
+class FinishOrderActivity : AppCompatActivity(), CanSetCostInterface {
     private val orderManager = OrderManager.instance
     private val authManager = AuthManager.instance
     private val orderListFragment = OrderListFragment()
@@ -32,7 +32,7 @@ class FinishOrderActivity : AppCompatActivity(), CostActivity {
         setUpOrderListFragment()
 
         submit_order.setOnClickListener {
-            if (orderManager.getItems().size == 0)
+            if (orderManager.items.size == 0)
                 Toast.makeText(this, "Your order is empty", Toast.LENGTH_LONG).show()
             else
                 submitOrder()
