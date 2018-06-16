@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/round_button_white"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/delivery_type_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="22sp"
+        android:textStyle="bold"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/order_type_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_button_red"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/delivery_button_text"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/order_type_collection"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/round_button_red"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="@string/collection_button_text"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="10dp" />
+
+    </LinearLayout>
+</LinearLayout>

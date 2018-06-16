@@ -22,4 +22,7 @@
     <string name="order_cost">Order Cost:</string>
     <string name="order_list_heading">Your Order:</string>
     <string name="remove_button_text">Remove</string>
+    <string name="delivery_button_text">Delivery</string>
+    <string name="collection_button_text">Collection</string>
+    <string name="delivery_type_title">Choose an order type</string>
 </resources>

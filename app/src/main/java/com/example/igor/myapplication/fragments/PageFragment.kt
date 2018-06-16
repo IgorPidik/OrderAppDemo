@@ -22,9 +22,6 @@ class PageFragment : Fragment() {
     private val pageTitle: String by lazy {
         arguments!!.getString("PAGE_NAME")
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val orderManager = OrderManager.instance

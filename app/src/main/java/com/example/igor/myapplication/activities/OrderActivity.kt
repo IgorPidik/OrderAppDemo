@@ -10,6 +10,7 @@ import com.example.igor.myapplication.R
 import com.example.igor.myapplication.adapters.ItemFragmentPageAdapter
 import com.example.igor.myapplication.adapters.OrderListAdapter
 import com.example.igor.myapplication.controllers.OrderManager
+import com.example.igor.myapplication.fragments.DeliveryTypeDialog
 import com.example.igor.myapplication.fragments.OrderListFragment
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,6 +45,15 @@ class OrderActivity : AppCompatActivity(), CanSetCostInterface {
                 finishOrder()
         }
 
+        showDeliveryTypeDialog()
+
+    }
+
+    private fun showDeliveryTypeDialog() {
+        val fm = supportFragmentManager
+        val deliveryTypeDialog = DeliveryTypeDialog()
+        deliveryTypeDialog.isCancelable = false
+        deliveryTypeDialog.show(fm, "delivery_type_dialog")
     }
 
     private fun setUpTableLayoutMode() {
