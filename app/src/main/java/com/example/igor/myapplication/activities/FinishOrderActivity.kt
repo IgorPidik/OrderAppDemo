@@ -1,5 +1,6 @@
 package com.example.igor.myapplication.activities
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,6 +11,7 @@ import com.example.igor.myapplication.controllers.AuthManager
 import com.example.igor.myapplication.controllers.OrderManager
 import com.example.igor.myapplication.fragments.OrderListFragment
 import com.example.igor.myapplication.utils.OrderType
+import com.stripe.android.Stripe
 import kotlinx.android.synthetic.main.activity_finish_order.*
 
 
@@ -21,6 +23,7 @@ class FinishOrderActivity : AppCompatActivity(), CanSetCostInterface {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_finish_order)
+
         supportActionBar?.let {
             it.setDisplayHomeAsUpEnabled(true)
             it.setDisplayShowHomeEnabled(true)
@@ -48,7 +51,8 @@ class FinishOrderActivity : AppCompatActivity(), CanSetCostInterface {
     }
 
     private fun submitOrder() {
-        Toast.makeText(this, "Order submitted", Toast.LENGTH_LONG).show()
+        val intent = Intent(this, PayActivity::class.java)
+        startActivity(intent)
     }
 
     override fun setNewCost(newCost: Double) {
